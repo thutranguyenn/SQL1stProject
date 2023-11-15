@@ -1,0 +1,44 @@
+CREATE TABLE Khach_Hang
+(	HoVaDem nvarchar(50) NOT NULL,
+	Ten_KH nvarchar(50) NOT NULL,
+	CCCD_or_CMND varchar(12) PRIMARY KEY,
+	SDT nvarchar(10),
+	Email varchar(50)
+	)
+CREATE TABLE Vo_chong
+(	CCCD_or_CMND varchar(12) NOT NULL,
+	HoVaTen nvarchar(50) NOT NULL,
+	Gioi_Tinh nvarchar CHECK(Gioi_Tinh IN('Nam','Nữ')),
+	Quan_he nvarchar CHECK(Quan_he IN('Vợ','Chồng'))
+	CONSTRAINT fk_Vkck_CCCD_or_CMND
+	FOREIGN KEY (CCCD_or_CMND)
+	REFERENCES Khach_Hang (CCCD_or_CMND)
+	)
+INSERT INTO Khach_Hang (HoVaDem,Ten_KH,CCCD_or_CMND,SDT,Email)
+VALUES('Nguyên Văn','An','038684559223','0965484392','NguyenA@gmail.com')
+INSERT INTO Khach_Hang (HoVaDem,Ten_KH,CCCD_or_CMND,SDT,Email)		
+		VALUES('Hoàng Văn','Bình','048852845592','0934023300','NguyenA@gmail.com')
+INSERT INTO Khach_Hang (HoVaDem,Ten_KH,CCCD_or_CMND,SDT,Email)		
+		VALUES('Nguyên Thị','Chi','001454382040','0932111240','NguyenThiC@gmail.com')
+INSERT INTO Khach_Hang (HoVaDem,Ten_KH,CCCD_or_CMND,SDT,Email)	
+		VALUES('Trần Văn','Diệp','002343258462','0937505853','TranD02@gmail.com')
+INSERT INTO Khach_Hang (HoVaDem,Ten_KH,CCCD_or_CMND,SDT,Email)		
+		VALUES('Hoàng Văn','Thái','016343569999','0773002477','VanThaiHoang2@gmail.com')
+INSERT INTO Khach_Hang (HoVaDem,Ten_KH,CCCD_or_CMND,SDT,Email)		
+		VALUES('Trần Thị','Nhàn','010323458969','0902555471','TranNhan65@gmail.com')
+INSERT INTO Khach_Hang (HoVaDem,Ten_KH,CCCD_or_CMND,SDT,Email)	
+		VALUES('Ngô Tường','Vi','038258696433','0934196600','TuongViNgo62@gmail.com')
+INSERT INTO Khach_Hang (HoVaDem,Ten_KH,CCCD_or_CMND,SDT,Email)		
+		VALUES('Nguyễn Huy','Gay','001119342323','0772665115','HuyRatGay69@gmail.com')
+INSERT INTO Khach_Hang (HoVaDem,Ten_KH,CCCD_or_CMND,SDT,Email)		
+		VALUES('Lê Thành','Vinh','022358613422','0937146914','LeVinh258@gmail.com')
+INSERT INTO Khach_Hang (HoVaDem,Ten_KH,CCCD_or_CMND,SDT,Email)		
+	VALUES('Vũ Trọng','Thành','038234566781','0764341010','VuThanh10@gmail.com')
+INSERT INTO Vo_chong(HoVaTen,CCCD_or_CMND,Quan_he,Gioi_Tinh)
+VALUES('Nguyễn Văn An','038684559223','Nam','Chồng')
+INSERT INTO Vo_chong(HoVaTen,CCCD_or_CMND,Quan_he,Gioi_Tinh)
+VALUES('Nguyên Thị Chi','001454382040','Nữ','Vợ')
+INSERT INTO Vo_chong(HoVaTen,CCCD_or_CMND,Quan_he,Gioi_Tinh)
+VALUES('Ngô Tường Vi','038258696433','Nữ','Vợ')
+INSERT INTO Vo_chong(HoVaTen,CCCD_or_CMND,Quan_he,Gioi_Tinh)
+VALUES('Vũ Trọng Thành','038234566781','Nam','Chồng')
