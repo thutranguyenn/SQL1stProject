@@ -1,0 +1,40 @@
+CREATE TABLE Nhan_Vien
+(ID_NV varchar(20) PRIMARY KEY,
+ HoDemNV nvarchar(50) NOT NULL,
+ TenNV nvarchar(20) NOT NULL,
+ NgaySinh date,
+ GioiTinh nvarchar(10) CHECK(GioiTinh IN('Nam', 'Nữ')),
+ QueQuan varchar(50) NOT NULL,
+ MucLuong int(2),
+ SDT varchar(10),
+ NgayLamViec date DEFAULT'2022-10-22',
+ CONTRAINT fk_Dai_ly FOREIGN KEY (ID_DaiLy)
+ REFERENCES Dai_ly (ID_DaiLy))
+ GO
+ CREATE TABLE Dai_Ly
+(ID_DaiLy varchar(20) PRIMARY KEY,
+ DiaChi nvarchar(50),
+ SDT_DaiLy varchar(10),
+ TruongPhong nvarchar(50),
+ CONTRAINT fk_Cong_Ty FOREIGN KEY (ID_CongTy)
+ REFERENCES Cong_Ty (ID_CongTy))
+ GO
+ INSERT INTO Nhan_Vien VALUES
+ ('001',N'Nguyễn Châu',N'Anh','22/11/1990',N'Nữ',N'Hà Nội','10000000','0929797008','25/09/2014','SEK2211'),
+ ('002',N'Đặng Chí',N'Bình','29/11/1990',N'Nam',N'Ninh Bình','20000000','0963336606','14/08/2015','LMH2911'),
+ ('003',N'Hoàng An',N'Chi','26/02/1991',N'Nữ',N'Bắc Giang','15000000','0932334686','02/01/2016','LCS2602'),
+ ('004',N'Trần Hải',N'Đăng','07/03/1992',N'Nam',N'Hà Nội','17000000','0928858868','21/03/2017','IMS0703'),
+ ('005',N'Vũ Bảo',N'Ngọc','10/03/1993',N'Nữ',N'Nam Định','23000000','0925092014','26/08/2016','PNE1003'),
+ ('006',N'Nguyễn Minh',N'Khang','02/05/1995',N'Nam',N'Phú Thọ','14000000','0902012004','15/07/2018','YSJ0205'),
+ ('007',N'Lê Lan',N'Hương','03/01/1995',N'Nữ',N'Hà Nội','13000000','0982845678','08/09/2019','SEK2211'),
+ ('008',N'Phạm Minh',N'Hiếu','14/08/1997',N'Nam',N'Hoà Bình','18000000','0901062004','23/10/2021','LMH2911'),
+ ('009',N'Trần Hạ',N'Linh','08/12/1996',N'Nữ',N'Phú Thọ','10000000','0904050769','21/03/2020','LCS2602'),
+ ('010',N'Nguyễn Đức',N'Trí','16/11/1992',N'Nam',N'Thanh Hoá','11000000','0945711565','12/09/2018','IHS0703'),
+
+ INSERT INTO Dai_Ly VALUES
+('SEK2211',N'Long Biên, Hà Nội','0372709672',N'Nguyễn Huy Hoàng','MS1610'),
+('LMH2911',N'Hoàng Mai, Hà Nội','0869425391',N'Lê Việt Hoàng','TS2102'),
+('LCS2602',N'Hai Bà Trưng, Hà Nội','0339173107',N'Hoàng Nguyên Giáp','BP1211'),
+('LHS0703',N'Đống Đa, Hà Nội','0362864028',N'Nguyễn Thu Trang','TK2103'),
+('PNE1003',N'Hoàn Kiếm, Hà Nội','0981472538',N'Nguyễn Thị Ngọc Khánh','TS2102'),
+('YSJ0205',N'Cầu Giấy, Hà Nội','0349374201',N'Nguyễn Thị Ngọc Khánh','MS1610'),
