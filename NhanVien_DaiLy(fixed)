@@ -5,7 +5,7 @@ CREATE TABLE Dai_Ly
 (ID_DaiLy varchar(20) PRIMARY KEY,
  DiaChi nvarchar(50),
  SDT_DaiLy varchar(10),
- TruongPhong nvarchar(50)
+ TruongPhong nvarchar(50) NOT NULL
 )
 GO
 CREATE TABLE Nhan_Vien
@@ -30,7 +30,7 @@ CREATE TABLE Nhan_Vien
 ('LCS2602',N'Hai Bà Trưng, Hà Nội','0339173107',N'Hoàng Nguyên Giáp'),
 ('LHS0703',N'Đống Đa, Hà Nội','0362864028',N'Nguyễn Thu Trang'),
 ('PNE1003',N'Hoàn Kiếm, Hà Nội','0981472538',N'Nguyễn Thị Ngọc Khánh'),
-('YSJ0205',N'Cầu Giấy, Hà Nội','0349374201',N'Nguyễn Thị Ngọc Khánh')
+('YSJ0205',N'Cầu Giấy, Hà Nội','0349374201',N'Nguyễn Thu Ngọc')
 
 INSERT INTO Nhan_Vien VALUES
  ('001',N'Nguyễn Châu',N'Anh','22/11/1990',N'Nữ',N'Hà Nội','10000000','0929797008','25/09/2014','SEK2211'),
