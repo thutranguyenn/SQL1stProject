@@ -1,0 +1,46 @@
+USE QLGD_BDS
+GO
+
+CREATE TABLE Dai_Ly
+(ID_DaiLy varchar(20) PRIMARY KEY,
+ DiaChi nvarchar(50),
+ SDT_DaiLy varchar(10),
+ TruongPhong nvarchar(50) NOT NULL
+)
+INSERT INTO Dai_Ly VALUES
+('SEK2211',N'Long Biên, Hà Nội','0372709672',N'Nguyễn Huy Hoàng'),
+('LMH2911',N'Hoàng Mai, Hà Nội','0869425391',N'Lê Việt Hoàng'),
+('LCS2602',N'Hai Bà Trưng, Hà Nội','0339173107',N'Hoàng Nguyên Giáp'),
+('IHS0703',N'Đống Đa, Hà Nội','0362864028',N'Nguyễn Thu Trang'),
+('PNE1003',N'Hoàn Kiếm, Hà Nội','0981472538',N'Nguyễn Thị Ngọc Khánh'),
+('YSJ0205',N'Cầu Giấy, Hà Nội','0349374201',N'Nguyễn Thu Ngọc')
+
+CREATE TABLE Nhan_Vien
+(ID_NV varchar(20) PRIMARY KEY,
+ HoDemNV nvarchar(50) NOT NULL,
+ TenNV nvarchar(20) NOT NULL,
+ NgaySinh date,
+ GioiTinh nvarchar(10) CHECK(GioiTinh IN('Nam', 'Nữ')),
+ QueQuan varchar(50) NOT NULL,
+ MucLuong int,
+ SDT varchar(10),
+ NgayLamViec date DEFAULT'2022-10-22',
+ ID_DaiLy varchar(20) NOT NULL
+ CONSTRAINT fk_Nv_ID_DaiLy 
+ FOREIGN KEY (ID_DaiLy)
+ REFERENCES Dai_Ly (ID_DaiLy)
+ )
+
+INSERT INTO Nhan_Vien VALUES
+ ('001',N'Nguyễn Châu',N'Anh','1990/11/22','Nữ',N'Hà Nội','10000000','0929797008','2015-09-25','SEK2211'),
+ ('002',N'Đặng Chí',N'Bình','1990/11/29','Nam',N'Ninh Bình','20000000','0963336606','2018-04-17','LMH2911'),
+ ('003',N'Hoàng An',N'Chi','1991/02/26','Nữ',N'Bắc Giang','15000000','0932334686','2016-03-13','LCS2602'),
+ ('004',N'Trần Hải',N'Đăng','1992/03/07','Nam',N'Hà Nội','17000000','0928858868','2017-06-14','IHS0703'),
+ ('005',N'Vũ Bảo',N'Ngọc','1993/03/10','Nữ',N'Nam Định','23000000','0925092014','2019-08-23','PNE1003'),
+ ('006',N'Nguyễn Minh',N'Khang','1995/05/02','Nam',N'Phú Thọ','14000000','0902012004','2018-09-10','YSJ0205'),
+ ('007',N'Lê Lan',N'Hương','1995/01/03','Nữ',N'Hà Nội','13000000','0982845678','2019-10-28','SEK2211'),
+ ('008',N'Phạm Minh',N'Hiếu','1997/08/14','Nam',N'Hoà Bình','18000000','0901062004','2021-07-04','LMH2911'),
+ ('009',N'Trần Hạ',N'Linh','1996/12/18','Nữ',N'Phú Thọ','10000000','0904050769','2020-05-30','LCS2602'),
+ ('010',N'Nguyễn Đức',N'Trí','1998/11/20','Nam',N'Thanh Hoá','11000000','0945711565','2017-11-20','IHS0703')
+
+GO
