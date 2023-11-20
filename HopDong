@@ -1,0 +1,19 @@
+Create table Hop_Dong
+(ID_BDS varchar(10),
+ID_NV varchar(20),
+CCCD varchar(12),
+HoSoLePhi nvarchar(30) CHECK(HoSoLePhi IN ('Có', 'Chưa có')),
+HonNhan nvarchar(30) Check (Honnhan In ('Chưa kết hôn', 'Giấy đăng ký kết hôn')),
+SoHoKhau nvarchar(30) check (SoHoKhau In ('Có', 'Chưa có')),
+CongChung nvarchar(30) check (CongChung in ('Có', 'Chưa có')),
+ThoiGian date NOT NULL, 
+primary key ( ID_BDS, ID_NV, CCCD),
+constraint fk_Hopdong_ID_BDS
+foreign key (ID_BDS)
+references BDS (ID_BDS),
+constraint fk_Hopdong_ID_NhanVien
+foreign key (ID_NV)
+references Nhan_Vien (ID_NV),
+constraint fk_Hopdong_CCCD_KhachHang
+foreign key (CCCD)
+references Khach_Hang (CCCD))
