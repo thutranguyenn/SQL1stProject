@@ -5,12 +5,12 @@ CEO nvarchar(50) NOT NULL,
 TenCongTy nvarchar(50))
  
  INSERT INTO Cong_Ty VALUES
- ('001',N'Trần Văn Nam',N'Công ty cổ phần Chứng khoán APG'),
- ('002',N'Lê Văn Thịnh',N'Công ty cổ phần Chứng khoán BIDV'),
- ('003',N'Nguyễn Hữu Tài',N'Công ty cổ phần Chứng khoán DSC'),
- ('004',N'Trịnh Thu Trang',N'Công ty cổ phần Chứng khoán FPT'),
- ('005',N'Hoàng Ngọc Phương',N'Công ty cổ phần Chứng khoán MB'),
- ('006',N'Nguyễn Đức Trường',N'Công ty cổ phần Chứng khoán Everest');
+ ('001',N'Trần Văn Nam',N'Công Ty Cổ Phần Vinhomes'),
+ ('002',N'Lê Văn Thịnh',N'Công Ty Cổ Phần Đầu Tư Nam Long'),
+ ('003',N'Nguyễn Hữu Tài',N'Bim Group'),
+ ('004',N'Trịnh Thu Trang',N'Công Ty  Phát Triển Phú Mỹ Hưng'),
+ ('005',N'Hoàng Ngọc Phương',N'Công Ty Cổ Phần Tập Đoàn Sunshine'),
+ ('006',N'Nguyễn Đức Trường',N'Công ty Cổ phần Tập đoàn EcoPark');
 
  CREATE TABLE DC_CongTy
 (ID_CongTy varchar(10) PRIMARY KEY ,
@@ -20,10 +20,10 @@ FOREIGN KEY (ID_CongTy)
 REFERENCES Cong_Ty (ID_CongTy))
  
  INSERT INTO DC_CongTy VALUES
- ('001',N'TP Hồ Chí Minh'),
+ ('001',N'Hà '),
  ('002',N'TP Hồ Chí Minh'),
- ('003',N'Hà Nội'),
- ('004',N'Hà Nội'),
+ ('003',N'Quảng '),
+ ('004',N'TP Hồ Chí '),
  ('005',N'Hà Nội'),
  ('006',N'Hà Nội')
 
