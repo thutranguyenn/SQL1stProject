@@ -21,4 +21,13 @@ references Khach_Hang (CCCD))
 
 insert into Hop_Dong Values
 ('CTG30','001','001119342323',N'Có',N'Giấy đăng ký kết hôn',N'Có',N'Chưa có','2023-04-22'),
-
+('ACB23','002','002343258462',N'Có',N'Giấy đăng ký kết hôn',N'Có',N'Có','2023-01-21'),
+('FPT91','003','002343258462',N'Có',N'Giấy đăng ký kết hôn',N'Có',N'Có','2022-10-23'),
+('APG10','003','001454382040',N'Có',N'Chưa kết hôn',N'Có',N'Có','2023-07-01'),
+insert into Hop_Dong Values
+('BID43','004','010323458969',N'Có',N'Giấy đăng ký kết hôn',N'Chưa có',N'Có','2022-10-22'),
+('TPB17','007','016343569999',N'Có',N'Chưa kết hôn',N'Chưa có',N'Chưa có','2021-08-23'),
+('VHM39','005','022358613422',N'Có',N'Giấy đăng ký kết hôn',N'Có',N'Có','2023-06-01'),
+('HPG27','007','038234566781',N'Có',N'Giấy đăng ký kết hôn',N'Có',N'Có','2023-12-24'),
+('SSI07','009','038258696433',N'Có',N'Chưa kết hôn',N'Có',N'Chưa có','2024-11-05'),
+('WWG41','010','048852845592',N'Có',N'Chưa kết hôn',N'Chưa có',N'Chưa có','2023-11-19')
