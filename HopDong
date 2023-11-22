@@ -17,3 +17,8 @@ references Nhan_Vien (ID_NV),
 constraint fk_Hopdong_CCCD_KhachHang
 foreign key (CCCD)
 references Khach_Hang (CCCD))
+
+
+insert into Hop_Dong Values
+('CTG30','001','001119342323',N'Có',N'Giấy đăng ký kết hôn',N'Có',N'Chưa có','2023-04-22'),
+
