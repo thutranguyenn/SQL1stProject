@@ -1,4 +1,3 @@
-use CongTy_DC
 CREATE TABLE Cong_Ty
 ( ID_CongTy varchar(10) PRIMARY KEY,
 CEO nvarchar(50) NOT NULL,
@@ -10,21 +9,37 @@ TenCongTy nvarchar(50))
  ('003',N'Nguyễn Hữu Tài',N'Bim Group'),
  ('004',N'Trịnh Thu Trang',N'Công Ty  Phát Triển Phú Mỹ Hưng'),
  ('005',N'Hoàng Ngọc Phương',N'Công Ty Cổ Phần Tập Đoàn Sunshine'),
- ('006',N'Nguyễn Đức Trường',N'Công ty Cổ phần Tập đoàn EcoPark');
-
+ ('006',N'Nguyễn Đức Trường',N'Công ty Cổ phần Tập đoàn EcoPark'),
+ ('007',N'Trần Nhật Trường',N'Novaland'),
+ ('008',N'Tần Minh',N'Hongkong Land'),
+ ('009',N'Nguyễn Mỹ Linh',N'Công ty cổ phần Bất động sản Tiến Phước'),
+ ('010',N'Hà Thu Thảo',N'Công ty CP bất động sản Him Lam'),
+ ('011',N'Nguyễn Ngọc Bắc',N'CapitaLand');
  CREATE TABLE DC_CongTy
 (ID_CongTy varchar(10) PRIMARY KEY ,
-DiaChi nvarchar(50),
+DiaChi nvarchar(250),
 CONSTRAINT fk_DC_CongTy_ID_CongTy
 FOREIGN KEY (ID_CongTy)
 REFERENCES Cong_Ty (ID_CongTy))
  
  INSERT INTO DC_CongTy VALUES
- ('001',N'Hà '),
- ('002',N'TP Hồ Chí Minh'),
- ('003',N'Quảng '),
- ('004',N'TP Hồ Chí '),
- ('005',N'Hà Nội'),
- ('006',N'Hà Nội')
+ ('001',N'53 P.Triều Khúc,Thanh Xuân Nam,Thanh Xuân,Hà Nội'),
+ ('001',N'S2.12SH20 Vinhomes Ocean Park,Đa Tốn,Gia Lâm,Hà Nội'),
+ ('001',N'Số 7 Bằng Lăng 1,Khu đô thị Vinhomes Riverside,Long Biên,Hà Nội'),
+ ('002',N'29 Đ.Khương Đình,Hạ Đình,Thanh Xuân,Hà Nội'),
+ ('002',N'91 P.An Trạch,Chợ Dừa,Hoàn Kiếm,Hà Nội'),
+ ('003',N'Tầng 2,tòa nhà HaNoi Aqua Central,44 Yên Phụ,Ba Đình,Hà Nội'),
+ ('003',N'Tầng 5,Tòa nhà số 24C Phan Đăng Lưu,Phường 6,Quận Bình Thạnh, TP.Hồ Chí Minh'),
+ ('004',N'2/93/20,Phố Hoàng Văn Thái,Phường Khương Trung,Quận Thanh Xuân,Hà Nội'),
+ ('005',N'Tầng 9,tòa nhà Sunshine Center,16 Phạm Hùng,Phường Mỹ Đình 2,Quận Nam Từ Liêm, Hà Nội'),
+ ('006',N'Tòa nhà HaNoi Lake View, 28 Đường Thanh Niên, Tây Hồ,Hà Nội'),
+ ('006',N'Xã Xuân Quan,Huyện Văn Giang,Tỉnh Hưng Yên'),
+ ('007',N'65 Nguyễn Du,P. Bến Nghé,Quận 1,TP.Hồ Chí Minh'),
+ ('008',N'Tòa nhà văn phòng 63,Lý Thái Tổ,Hà Nội'),
+ ('008',N'Tòa nhà văn phòng Central Building,Hà Nội'),
+ ('009',N'542 Trần Hưng Đạo, Phường 02, Quận 5,TP.Hồ Chí Minh'),
+ ('010',N'152/1A Nguyễn Văn Thương, P. 25, Q. Bình Thạnh, TP.Hồ Chí Minh'),
+ ('011',N'Tầng 8,Tòa nhà Vista,628C Xa lộ Hà Nội,P.An Phú,Quận 2,TP.Hồ Chí Minh')
 
- GO
+ 
+ GO 
