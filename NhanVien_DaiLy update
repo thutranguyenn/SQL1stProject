@@ -1,0 +1,93 @@
+CREATE TABLE Dai_Ly
+(ID_DaiLy varchar(20) PRIMARY KEY,
+ DiaChi nvarchar(50),
+ SDT_DaiLy varchar(10),
+ TruongPhong nvarchar(50) NOT NULL
+)
+INSERT INTO Dai_Ly VALUES
+('SEK2211',N'Long Biên, Hà Nội','0372709672',N'Nguyễn Huy Hoàng'),
+('LMH2911',N'Hoàng Mai, Hà Nội','0869425391',N'Lê Việt Hoàng'),
+('LCS2602',N'Hai Bà Trưng, Hà Nội','0339173107',N'Hoàng Nguyên Giáp'),
+('IHS0703',N'Đống Đa, Hà Nội','0362864028',N'Nguyễn Thu Trang'),
+('PNE1003',N'Hoàn Kiếm, Hà Nội','0981472538',N'Nguyễn Thị Ngọc Khánh'),
+('YSJ0205',N'Cầu Giấy, Hà Nội','0349374201',N'Nguyễn Thu Ngọc'),
+('JSJ1002',N'Hà Đông, Hà Nội','0385737228',N'Trần Thị Linh Chi'),
+('YJS1408',N'Thanh Xuân, Hà Nội','0938573747',N'Bùi Ngọc Bảo Anh'),
+('KJK2504',N'Nam Từ Liêm, Hà Nội','0928472643',N'Phạm Quang Đức'),
+('HDH2008',N'Bắc Từ Liêm, Hà Nội','0958473454',N'Nguyễn Thị Tuyết Mai'),
+('SJH1508',N'Chương Mỹ, Hà Nội','0945828473',N'Đặng Tường Vy'),
+('LKS1407',N'Thanh Trì, Hà Nội','0948374722',N'Hà Minh Anh'),
+('JSM0704',N'Đống Đa, Hà Nội','0932478695',N'Trần Gia Bảo'),
+('YSC0812',N'Hoàng Mai, Hà Nội','0938573628',N'Nguyễn Minh Trí'),
+('KJS0301',N'Tây Hồ, Hà Nội','0923492852',N'Phạm Minh Hiếu'),
+('SHK2211',N'Long Biên, Hà Nội','0948573746',N'Vũ Đức Mạnh'),
+('JHI0104',N'Hai Bà Trưng, Hà Nội','0937572633',N'Lê Việt Đức'),
+('EKS1990',N'Hoàn Kiếm, Hà Nội','0937466363',N'Nguyễn Hải Minh'),
+('MHL1990',N'Thanh Xuân, Hà Nội','0987656171',N'Trương Nam Hải'),
+('CSL1991',N'Cầu Giấy, Hà Nội','0925678912',N'Huỳnh Gia Minh'),
+('HSI1992',N'Đống Đa, Hà Nội','0903071992',N'An Hải Đường'),
+('PNS1993',N'Hà Đông, Hà Nội','0942969834',N'Vũ Song Vũ'),
+('SJY1995',N'Tây Hồ, Hà Nội','0902051995',N'Lê Mai Anh'),
+('JSK3195',N'Hoàn Kiếm, Hà Nội','0937573727',N'Tăng Thanh Hằng'),
+('HKS1181',N'Nam Từ Liêm, Hà Nội','0922111981',N'Nguyễn Minh Đạt'),
+('HIJ1488',N'Bắc Từ Liêm, Hà Nội','0901041988',N'Cao Tuệ Tâm')
+
+
+
+CREATE TABLE Nhan_Vien
+(ID_NV varchar(20) PRIMARY KEY,
+ HoDemNV nvarchar(50) NOT NULL,
+ TenNV nvarchar(20) NOT NULL,
+ NgaySinh date,
+ GioiTinh nvarchar(10) CHECK(GioiTinh IN(N'Nam',N'Nữ')),
+ QueQuan varchar(50) NOT NULL,
+ MucLuong int,
+ SDT varchar(10),
+ NgayLamViec date DEFAULT'2022-10-22',
+ ID_DaiLy varchar(20) NOT NULL
+ CONSTRAINT fk_Nv_ID_DaiLy 
+ FOREIGN KEY (ID_DaiLy)
+ REFERENCES Dai_Ly (ID_DaiLy)
+ )
+
+INSERT INTO Nhan_Vien VALUES
+ ('001',N'Nguyễn Châu',N'Anh','1990/11/22',N'Nữ',N'Hà Nội','10000000','0929797008','2015-09-25','SEK2211'),
+ ('002',N'Đặng Chí',N'Bình','1990/11/29',N'Nam',N'Ninh Bình','20000000','0963336606','2018-04-17','LMH2911'),
+ ('003',N'Hoàng An',N'Chi','1991/02/26',N'Nữ',N'Bắc Giang','15000000','0932334686','2016-03-13','LCS2602'),
+ ('004',N'Trần Hải',N'Đăng','1992/03/07',N'Nam',N'Hà Nội','17000000','0928858868','2017-06-14','IHS0703'),
+ ('005',N'Vũ Bảo',N'Ngọc','1993/03/10',N'Nữ',N'Nam Định','23000000','0925092014','2019-08-23','PNE1003'),
+ ('006',N'Nguyễn Minh',N'Khang','1995/05/02',N'Nam',N'Phú Thọ','14000000','0902012004','2018-09-10','YSJ0205'),
+ ('007',N'Lê Lan',N'Hương','1995/01/03',N'Nữ',N'Hà Nội','13000000','0982845678','2019-10-28','SEK2211'),
+ ('008',N'Phạm Minh',N'Hiếu','1997/08/14',N'Nam',N'Hoà Bình','18000000','0901062004','2021-07-04','LMH2911'),
+ ('009',N'Trần Hạ',N'Linh','1996/12/18',N'Nữ',N'Phú Thọ','10000000','0904050769','2020-05-30','LCS2602'),
+ ('010',N'Nguyễn Hải',N'Hoàng','1998/11/20',N'Nam',N'Thanh Hoá','11000000','0945711565','2017-11-20','IHS0703'),
+ ('011',N'An Hải',N'Anh','1997/02/22',N'Nữ',N'Hà Tĩnh','13000000','0985949586','2019-10-21','PNE1003'),
+ ('012',N'Hoàng Hải',N'Hà','1995/04/14',N'Nữ',N'Hà Nam','15000000','0994874656','2017-11-20','YSJ0205'),
+ ('013',N'Nguyễn Minh',N'Triết','1999/07/07',N'Nam',N'Hải Phòng','11000000','0983948756','2020-09-23','JSJ1002'),
+ ('014',N'Vũ Cát',N'Tường','1996/01/20',N'Nữ',N'Hà Nội','14000000','0923487955','2018-04-24','YJS1408'),
+ ('015',N'Phạm Hải',N'Băng','1995/08/18',N'Nữ',N'Nam Định','15000000','0957893456','2017-09-09','KJK2504'),
+ ('016',N'Nguyễn Uyển',N'Nhi','1994/09/08',N'Nữ',N'Phú Thọ','17000000','0946579246','2016-05-15','HDH2008'),
+ ('017',N'Phạm Linh',N'Lan','1993/10/20',N'Nữ',N'Bắc Giang','18000000','0975312468','2015-03-13','SJH1508'),
+ ('018',N'Mai Quốc',N'Khánh','1998/09/02',N'Nam',N'Hà Nội','12000000','0913579246','2019-12-22','LKS1407'),
+ ('019',N'Lương Mạnh',N'Hải','1992/03/23',N'Nam',N'Hải Dương','19000000','0924681012','2017-07-17','JSM0704'),
+ ('020',N'Đỗ Trạng',N'Nguyên','1997/10/10',N'Nam',N'Thái Bình','13000000','0913579111','2018-08-18','YSC0812'),
+ ('021',N'Hà Thạch',N'Thảo','1996/12/12',N'Nữ',N'Thái Nguyên','14000000','0912345678','2020-10-20','KJS0301'),
+ ('022',N'Trần Quốc',N'Anh','1998/06/26',N'Nam',N'Bắc Ninh','12000000','0920112023','2020-10-20','SHK2211'),
+ ('023',N'Hoàng Anh',N'Vũ','1995/04/14',N'Nam',N'Quảng Ninh','15000000','0947385967','2017-11-20','JHI0104'),
+ ('024',N'Lưu Khánh',N'Đan','1997/01/11',N'Nữ',N'Hoà Bình','13000000','0987345123','2018-08-18','EKS1990'),
+ ('025',N'Vũ Thiên',N'Bảo','1991/05/15',N'Nam',N'Nam Định','20000000','0987654321','2015-02-12','MHL1990'),
+ ('026',N'Phạm Bảo',N'Hân','1992/07/14',N'Nữ',N'Thanh Hoá','19000000','0988343567','2016-05-15','CSL1991'),
+ ('027',N'Nguyễn Khôi',N'Nguyên','1998/09/29',N'Nam',N'Phú Thọ','12000000','09237898456','2019-12-22','HSI1992'),
+ ('028',N'Nguyễn An',N'Nhiên','1999/01/21',N'Nữ',N'Bắc Giang','11000000','0936945673','2020-10-20','PNS1993')
+ ('029',N'Lê Tường',N'An','1995/05/05',N'Nam',N'Hà Nội','16000000','0956283393','2017-07-17','SJY1995'),
+ ('030',N'Đặng Thiên',N'Nga','1996/07/08',N'Nữ',N'Hải Phòng','14000000','0975848393','2019-06-26','JSK3195'),
+ ('031',N'Nguyễn Khả',N'Vy','1994/10/11',N'Nữ',N'Hà Tĩnh','16000000','0924758695','2017-11-20','HKS1181'),
+ ('032',N'Lê Bảo',N'Dương','1998/08/18',N'Nam',N'Hà Nam','12000000','0935894034','2020-10-20','HIJ1488'),
+ ('033',N'An Hải',N'My','1995/06/06',N'Nữ',N'Bắc Ninh','14000000','0985939585','2017-07-17','JSJ1002'),
+ ('034',N'Vũ Thái',N'Sơn','1999/11/11',N'Nam',N'Thái Nguyên','11000000','0986954984','2021-11-01','YJS1408'),
+ ('035',N'Hoàng Hải',N'Anh','1993/03/13',N'Nữ',N'Hưng Yên,'17000000','0997453897','2015-03-13','KJK2504'),
+ ('036',N'Phạm Gia',N'Phong','1997/07/17',N'Nam',N'Ninh Bình','13000000','0943584844','2018-08-18','HDH2008'),
+ ('037',N'Nguyễn Linh',N'Đan','1995/08/08',N'Nữ',N'Vĩnh Phúc','14000000','0939584822','2016-05-15','SJH1508'),
+ ('038',N'Trần Minh',N'Châu','1996/09/09',N'Nữ',N'Quảng Ninh','15000000','0916849034','2018-01-20','LKS1407'),
+ ('039',N'Vũ Tường',N'Minh','1994/10/10',N'Nam',N'Quảng Bình','16000000','0949574235','2017-12-02','JSM0704'),
+ ('040',N'Đinh Minh',N'Khuê','1998/12/12',N'Nữ',N'Hà Nội','12000000','0975935043','2020-10-20','YSC0812')
